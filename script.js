@@ -9,6 +9,7 @@ const amount = document.getElementById("amount")
 const currency = document.getElementById("currency")
 const footer = document.querySelector("main footer")
 const description = document.getElementById("description")
+const result = document.getElementById("result")
 
 // Manipulando o input do amount para receber apenas números
 amount.addEventListener("input", () => {
@@ -39,9 +40,21 @@ function convertCurrency(amount, price, symbol) {
     //Exibindo cotação da moeda
     description.textContent = `${symbol} 1 = ${formatCurrencyBRL(price)}`
 
+    //Calculando o valor total
+    let total = amount * price
+    
+    //Verifica se o valor não é um número
+    if (isNaN(total)){
+      return alert("Por favor, insira um valor válido.")
+    }
+    
+    //Formantando o valor total
+    total = formatCurrencyBRL(total).replace("R$", "")
+
+    //Exibindo o resultado total
+    result.textContent = `${total} Reais`
+
     //Aplicando a classe e exibe o footer
-    
-    
     footer.classList.add("show-result")
 
   } catch (error) {
@@ -60,3 +73,5 @@ function formatCurrencyBRL(value){
     currency: "BRL",
  })
 }
+
+//48 984741160
