@@ -23,7 +23,7 @@ form.onsubmit = (event) => {
 
   switch (currency.value) {
     case "USA":
-      convertCurrency(amount.value, USD, "US$")
+      convertCurrency(amount.value, USA, "US$")
       break
     case "EUR":
       convertCurrency(amount.value, EUR, "€")
