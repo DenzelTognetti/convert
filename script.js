@@ -1,5 +1,5 @@
 //Cotação de moedas do dia (valores fictícios/hipotéticos)
-const USA = 5.46
+const USD = 5.46
 const EUR = 6.37
 const GBP = 7.31
 
@@ -22,8 +22,8 @@ form.onsubmit = (event) => {
   event.preventDefault()
 
   switch (currency.value) {
-    case "USA":
-      convertCurrency(amount.value, USA, "US$")
+    case "USD":
+      convertCurrency(amount.value, USD, "US$")
       break
     case "EUR":
       convertCurrency(amount.value, EUR, "€")
